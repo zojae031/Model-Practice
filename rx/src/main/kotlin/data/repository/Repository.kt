@@ -1,5 +1,7 @@
 package data.repository
 
-interface Repository {
+import io.reactivex.Single
 
+interface Repository {
+    fun getRemoteList() : Single<String>
 }
