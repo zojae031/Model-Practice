@@ -9,10 +9,15 @@ import io.reactivex.Observable
  * < Local은 존재하지 않는다. >
  */
 class RepositoryImpl private constructor(private val dataSource: RemoteDataSource) : Repository {
+    private var index = 0
 
     override fun getList(): Observable<String> = dataSource
-        .getList().map { it.split(">")[1].split("<")[0] }
-
+        .getList()
+        .map { it.split(">")[1].split("<")[0] }
+        .map { string ->
+            index++
+            return@map "$index : $string"
+        }
 
     companion object {
         private var INSTANCE: RepositoryImpl? = null
