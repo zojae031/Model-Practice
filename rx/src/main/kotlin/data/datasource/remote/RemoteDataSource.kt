@@ -1,8 +1,8 @@
 package data.datasource.remote
 
-import io.reactivex.Single
+import io.reactivex.Observable
 
 interface RemoteDataSource {
-    fun getList(): Single<String>
+    fun getList(): Observable<String>
 
 }

@@ -1,7 +1,7 @@
 package data.repository
 
-import io.reactivex.Single
+import io.reactivex.Observable
 
 interface Repository {
-    fun getRemoteList() : Single<String>
+    fun getRemoteList(): Observable<String>
 }
