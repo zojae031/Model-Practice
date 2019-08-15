@@ -21,6 +21,7 @@ object RemoteDataSourceImpl : RemoteDataSource {
                     it.onNext(buf)
                 }
             }
+            reader.close()
         }
     }
 }

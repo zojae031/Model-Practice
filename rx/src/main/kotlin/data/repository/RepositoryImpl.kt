@@ -10,7 +10,8 @@ import io.reactivex.Observable
  */
 class RepositoryImpl private constructor(private val dataSource: RemoteDataSource) : Repository {
 
-    override fun getRemoteList(): Observable<String> = dataSource.getList().map { it.split(">")[1].split("<")[0] }
+    override fun getList(): Observable<String> = dataSource
+        .getList().map { it.split(">")[1].split("<")[0] }
 
 
     companion object {

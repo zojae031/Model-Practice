@@ -13,9 +13,10 @@ fun main() {
     val compositeDisposable = CompositeDisposable()
     val repository = RepositoryImpl.getInstance(Injection.getDataSource()) //Repository 생성
 
-    repository.getRemoteList().subscribe { data ->
-        println(data.toString())
-    }.also { compositeDisposable.add(it) }
+    repository
+        .getList()
+        .subscribe { println(it) }
+        .also { compositeDisposable.add(it) }
 
     compositeDisposable.clear()
 }
