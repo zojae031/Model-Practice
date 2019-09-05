@@ -1,6 +1,7 @@
 package rx.datasource.remote
 
 import io.reactivex.Observable
+import util.NaverAccessUtil
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.URL
@@ -10,10 +11,7 @@ import java.net.URL
  * Observable 을 통해 onNext를 호출해서 repository 로 넘겨준다.
  * @see data.repository.RepositoryImpl
  */
-object RemoteDataSourceImpl : RemoteDataSource {
-    private val url = URL("https://www.naver.com/")
-    private val connector = url.openConnection()
-    private val reader = BufferedReader(InputStreamReader(connector.getInputStream()))
+object RemoteDataSourceImpl : RemoteDataSource,NaverAccessUtil() {
     override fun getList(): Observable<String> {
         return Observable.create {
             for (buf in reader.lines()) {
@@ -21,7 +19,7 @@ object RemoteDataSourceImpl : RemoteDataSource {
                     it.onNext(buf)
                 }
             }
-            reader.close()
+            this.closeStream()
         }
     }
 }

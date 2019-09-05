@@ -11,6 +11,7 @@ object RemoteDataSourceCallbackImpl : RemoteDataSourceCallback, NaverAccessUtil(
                 callback.getResult(buf)
             }
         }
+        this.closeStream()
     }
 
 }

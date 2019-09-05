@@ -11,6 +11,7 @@ object RemoteDataSourceHoImpl : RemoteDataSourceHo, NaverAccessUtil() {
                 call(buf)
             }
         }
+        this.closeStream()
     }
 
 }
