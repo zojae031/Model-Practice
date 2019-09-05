@@ -1,6 +1,6 @@
 package callback.datasource.remote
 
-interface RemoteDataSourceCallback {
+interface RemoteDataSourceCb {
     //콜백
     fun getListCallback(callback: Callback)
 

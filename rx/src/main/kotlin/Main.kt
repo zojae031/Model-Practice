@@ -1,5 +1,5 @@
-import callback.repository.RepositoryCallback
-import callback.repository.RepositoryCallbackImpl
+import callback.repository.RepositoryCb
+import callback.repository.RepositoryCbImpl
 import callback.repository.RepositoryHoImpl
 import io.reactivex.disposables.CompositeDisposable
 import rx.repository.RepositoryImpl
@@ -23,8 +23,8 @@ fun main() {
 
 
 fun callback() {
-    RepositoryCallbackImpl.getInstance(Injection.getDataSourceCallback())
-        .getListCallback(object : RepositoryCallback.Callback {
+    RepositoryCbImpl.getInstance(Injection.getDataSourceCallback())
+        .getListCallback(object : RepositoryCb.Callback {
             override fun getList(data: String) {
                 println(data)
             }

@@ -1,6 +1,6 @@
 package callback.repository
 
-interface RepositoryCallback {
+interface RepositoryCb {
     //콜백
     fun getListCallback(callback: Callback)
 

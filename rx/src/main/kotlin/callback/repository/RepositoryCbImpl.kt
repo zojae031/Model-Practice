@@ -1,9 +1,9 @@
 package callback.repository
 
-import callback.datasource.remote.RemoteDataSourceCallback
+import callback.datasource.remote.RemoteDataSourceCb
 
-class RepositoryCallbackImpl private constructor(private val dataSourceCallback: RemoteDataSourceCallback) :
-    RepositoryCallback {
+class RepositoryCbImpl private constructor(private val dataSourceCallback: RemoteDataSourceCb) :
+    RepositoryCb {
 
     /**
      * 문제점1 : 콜백지옥이 형성된다.
@@ -12,10 +12,10 @@ class RepositoryCallbackImpl private constructor(private val dataSourceCallback:
      * @see RepositoryHoImpl
      */
 
-    override fun getListCallback(callback: RepositoryCallback.Callback) {//콜백1
+    override fun getListCallback(callback: RepositoryCb.Callback) {//콜백1
         var index = 0
         dataSourceCallback
-            .getListCallback(object : RemoteDataSourceCallback.Callback {
+            .getListCallback(object : RemoteDataSourceCb.Callback {
                 //콜백2
                 override fun getResult(data: String) {
                     data.split(">")[1].split("<")[0]
@@ -29,10 +29,10 @@ class RepositoryCallbackImpl private constructor(private val dataSourceCallback:
 
 
     companion object {
-        private var INSTANCE: RepositoryCallbackImpl? = null
-        fun getInstance(dataSource: RemoteDataSourceCallback): RepositoryCallbackImpl {
+        private var INSTANCE: RepositoryCbImpl? = null
+        fun getInstance(dataSource: RemoteDataSourceCb): RepositoryCbImpl {
             if (INSTANCE == null) {
-                INSTANCE = RepositoryCallbackImpl(dataSource)
+                INSTANCE = RepositoryCbImpl(dataSource)
             }
             return INSTANCE!!
         }
