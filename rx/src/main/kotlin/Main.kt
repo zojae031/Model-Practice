@@ -1,5 +1,7 @@
 import callback.repository.RepositoryCallback
 import callback.repository.RepositoryCallbackImpl
+import callback.repository.RepositoryHo
+import callback.repository.RepositoryHoImpl
 import io.reactivex.disposables.CompositeDisposable
 import rx.repository.RepositoryImpl
 
@@ -12,16 +14,16 @@ import rx.repository.RepositoryImpl
 
 fun main() {
     println("rxjava")
-    Rxjava()
+    rxjava()
     println("callback")
-    Callback()
-
+    callback()
+    println("HighOrderFunction")
+    highOrderFunction()
 }
-fun Rxjava(){
-    val compositeDisposable = CompositeDisposable()
-    val repository = RepositoryImpl.getInstance(Injection.getDataSource()) //Repository 생성
 
-    repository
+fun rxjava() {
+    val compositeDisposable = CompositeDisposable()
+    RepositoryImpl.getInstance(Injection.getDataSource()) //Repository 생성
         .getList()
         .subscribe { println(it) }
         .also { compositeDisposable.add(it) }
@@ -29,15 +31,20 @@ fun Rxjava(){
     compositeDisposable.clear()
 }
 
-fun Callback(){
-    val repository = RepositoryCallbackImpl.getInstance(Injection.getDataSourceCallback())
-    repository
-        .getList(object : RepositoryCallback.Callback{
+fun callback() {
+    RepositoryCallbackImpl.getInstance(Injection.getDataSourceCallback())
+        .getListCallback(object : RepositoryCallback.Callback {
             override fun getList(data: String) {
                 println(data)
             }
         })
 }
 
+fun highOrderFunction() {
+    RepositoryHoImpl.getInstance(Injection.getDataSourceHo())
+        .getListHighOrderFunction { data ->
+            println(data)
+        }
+}
 
 

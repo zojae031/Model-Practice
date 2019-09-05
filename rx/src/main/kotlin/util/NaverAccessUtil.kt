@@ -9,7 +9,11 @@ open class NaverAccessUtil {
     private val connector = url.openConnection()
     protected val reader = BufferedReader(InputStreamReader(connector.getInputStream()))
 
-     companion object{
-         private const val naver = "https://www.naver.com/"
-     }
+    fun closeStream() {
+        reader.close()
+    }
+
+    companion object {
+        private const val naver = "https://www.naver.com/"
+    }
 }

@@ -5,11 +5,10 @@ import callback.datasource.remote.RemoteDataSourceCallback
 class RepositoryCallbackImpl private constructor(private val dataSourceCallback: RemoteDataSourceCallback) :
     RepositoryCallback {
 
-    private var index = 0
-
-    override fun getList(callback: RepositoryCallback.Callback) {
+    override fun getListCallback(callback: RepositoryCallback.Callback) {
+        var index = 0
         dataSourceCallback
-            .getList(object : RemoteDataSourceCallback.Callback {
+            .getListCallback(object : RemoteDataSourceCallback.Callback {
                 override fun getResult(data: String) {
                     data.split(">")[1].split("<")[0]
                         .also {
@@ -19,6 +18,7 @@ class RepositoryCallbackImpl private constructor(private val dataSourceCallback:
                 }
             })
     }
+
 
     companion object {
         private var INSTANCE: RepositoryCallbackImpl? = null
