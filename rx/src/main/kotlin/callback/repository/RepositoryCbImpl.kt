@@ -12,10 +12,10 @@ class RepositoryCbImpl private constructor(private val dataSourceCallback: Remot
      * @see RepositoryHoImpl
      */
 
-    override fun getListCallback(callback: RepositoryCb.Callback) {//콜백1
+    override fun getList(callback: RepositoryCb.Callback) {//콜백1
         var index = 0
         dataSourceCallback
-            .getListCallback(object : RemoteDataSourceCb.Callback {
+            .getList(object : RemoteDataSourceCb.Callback {
                 //콜백2
                 override fun getResult(data: String) {
                     data.split(">")[1].split("<")[0]

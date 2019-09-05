@@ -24,7 +24,7 @@ fun main() {
 
 fun callback() {
     RepositoryCbImpl.getInstance(Injection.getDataSourceCallback())
-        .getListCallback(object : RepositoryCb.Callback {
+        .getList(object : RepositoryCb.Callback {
             override fun getList(data: String) {
                 println(data)
             }
