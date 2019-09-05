@@ -2,16 +2,43 @@
 
 Practice modelling with rxjava
 
-
+``` 내부에 Callback, 고차함수, Rxjava를 사용한 코드들이 모두 들어있다.```
+[Callback](https://github.com/zojae031/Model-Practice/tree/master/rx/src/main/kotlin/callback)
+[고차함수](https://github.com/zojae031/Model-Practice/tree/master/rx/src/main/kotlin/highorderfuntion)
+[rxjava](https://github.com/zojae031/Model-Practice/tree/master/rx/src/main/kotlin/rx)
 
 ## Main 함수 구성
 
 ```kotlin
 fun main() {
-    val compositeDisposable = CompositeDisposable()
-    val repository = RepositoryImpl.getInstance(Injection.getDataSource()) //Repository 생성
+    println("rxjava")
+    rxjava()
+    println("callback")
+    callback()
+    println("HighOrderFunction")
+    highOrderFunction()
+}
 
-    repository
+
+fun callback() {
+    RepositoryCallbackImpl.getInstance(Injection.getDataSourceCallback())
+        .getListCallback(object : RepositoryCallback.Callback {
+            override fun getList(data: String) {
+                println(data)
+            }
+        })
+}
+
+fun highOrderFunction() {
+    RepositoryHoImpl.getInstance(Injection.getDataSourceHo())
+        .getListHighOrderFunction { data ->
+            println(data)
+        }
+}
+
+fun rxjava() {
+    val compositeDisposable = CompositeDisposable()
+    RepositoryImpl.getInstance(Injection.getDataSource()) //Repository 생성
         .getList()
         .subscribe { println(it) }
         .also { compositeDisposable.add(it) }
@@ -20,37 +47,51 @@ fun main() {
 }
 ```
 
-- Repository를 통하여 데이터를 가져와 보여주는 부분
-- Disposable 생명주기를 관리하는 부분
-
 
 
 ## Injection
 
 ```kotlin
 object Injection {
-    fun getDataSource(): RemoteDataSource {
-        return RemoteDataSourceImpl
-    }
+    private val remoteDataSource = RemoteDataSourceImpl
+    private val remoteDataSourceCallback = RemoteDataSourceCallbackImpl
+    private val remoteDataSourceHo = RemoteDataSourceHoImpl
+
+    fun getDataSource(): RemoteDataSource = remoteDataSource
+
+    fun getDataSourceCallback(): RemoteDataSourceCallback = remoteDataSourceCallback
+
+    fun getDataSourceHo(): RemoteDataSourceHo = remoteDataSourceHo
 }
 ```
 
 - 의존성 주입을 위해 Injection 내에서 RemoteDataSource를 생성하여 넘겨준다.
+- LocalDataSource는 구현하지 않았다.
 
 
 
 ## RepositoryImpl
 
 ```kotlin
-class RepositoryImpl private constructor(private val dataSource: RemoteDataSource) : Repository {
+/**
+ * dataSource에서 리스트를 받아와 태그를 제거하여 반환한다.
+ * Singleton으로 구성되어있으며 DataSource를 외부에서 주입받아 사용한다.
+ * < Local은 존재하지 않는다. >
+ */
+class RepositoryImpl private constructor(private val dataSource: RemoteDataSource) :
+    Repository {
     private var index = 0
 
+    /**
+     * 문제점1 : 학습곡선이 가파르다
+     * 결과 -> 비동기처리와 콜백지옥 문제 모두 해결할 수 있다.
+     */
     override fun getList(): Observable<String> = dataSource
         .getList()
         .map { it.split(">")[1].split("<")[0] }
-        .map { string ->
+        .map {
             index++
-            return@map "$index : $string"   
+            return@map "$index : $it"
         }
 
     companion object {
@@ -75,20 +116,18 @@ class RepositoryImpl private constructor(private val dataSource: RemoteDataSourc
 ## RemoteDataSourceImpl
 
 ```kotlin
-object RemoteDataSourceImpl : RemoteDataSource {
-    private val url = URL("https://www.naver.com/")
-    private val connector = url.openConnection()
-    private val reader = BufferedReader(InputStreamReader(connector.getInputStream()))
-    override fun getList(): Observable<String> {
-        return Observable.create {
-            for (buf in reader.lines()) {
-                if (buf.contains("class=\"ah_k\"")) {
-                    it.onNext(buf)
-                }
+object RemoteDataSourceHoImpl : RemoteDataSourceHo, NaverAccessUtil() {
+
+    //고차함수
+    override fun callbackHighOrderFunction(call: (String) -> String) {
+        for (buf in reader.lines()) {
+            if (buf.contains("class=\"ah_k\"")) {
+                call(buf)
             }
-            reader.close()
         }
+        this.closeStream()
     }
+
 }
 ```
 
