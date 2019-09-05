@@ -7,6 +7,7 @@ import rx.repository.RepositoryImpl
 /**
  * Main 함수
  * object class Injection 에서 DataSource 를 생성하여 의존성주입을 해준다.
+ * rxjava, Callback, 고차함수 세 가지 방법으로 데이터를 가져온다.
  * @see Injection
  * @author 조재영
  */
@@ -20,15 +21,6 @@ fun main() {
     highOrderFunction()
 }
 
-fun rxjava() {
-    val compositeDisposable = CompositeDisposable()
-    RepositoryImpl.getInstance(Injection.getDataSource()) //Repository 생성
-        .getList()
-        .subscribe { println(it) }
-        .also { compositeDisposable.add(it) }
-
-    compositeDisposable.clear()
-}
 
 fun callback() {
     RepositoryCallbackImpl.getInstance(Injection.getDataSourceCallback())
@@ -46,4 +38,12 @@ fun highOrderFunction() {
         }
 }
 
+fun rxjava() {
+    val compositeDisposable = CompositeDisposable()
+    RepositoryImpl.getInstance(Injection.getDataSource()) //Repository 생성
+        .getList()
+        .subscribe { println(it) }
+        .also { compositeDisposable.add(it) }
 
+    compositeDisposable.clear()
+}
