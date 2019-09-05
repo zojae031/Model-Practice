@@ -1,7 +1,7 @@
 package rx.repository
 
-import rx.datasource.remote.RemoteDataSource
 import io.reactivex.Observable
+import rx.datasource.remote.RemoteDataSource
 
 /**
  * dataSource에서 리스트를 받아와 태그를 제거하여 반환한다.
@@ -12,6 +12,10 @@ class RepositoryImpl private constructor(private val dataSource: RemoteDataSourc
     Repository {
     private var index = 0
 
+    /**
+     * 문제점1 : 학습곡선이 가파르다
+     * 결과 -> 비동기처리와 콜백지옥 문제 모두 해결할 수 있다.
+     */
     override fun getList(): Observable<String> = dataSource
         .getList()
         .map { it.split(">")[1].split("<")[0] }

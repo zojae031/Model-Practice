@@ -1,6 +1,5 @@
 import callback.repository.RepositoryCallback
 import callback.repository.RepositoryCallbackImpl
-import callback.repository.RepositoryHo
 import callback.repository.RepositoryHoImpl
 import io.reactivex.disposables.CompositeDisposable
 import rx.repository.RepositoryImpl

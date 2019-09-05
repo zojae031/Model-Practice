@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a2580eb-ec44-4fda-904c-b315b393b960" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Injection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Injection.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/callback/datasource/remote/RemoteDataSourceCallback.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/callback/datasource/remote/RemoteDataSourceCallback.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/callback/datasource/remote/RemoteDataSourceCallbackImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/callback/datasource/remote/RemoteDataSourceCallbackImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/callback/repository/RepositoryCallback.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/callback/repository/RepositoryCallback.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/callback/repository/RepositoryCallbackImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/callback/repository/RepositoryCallbackImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/util/NaverAccessUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/util/NaverAccessUtil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/highorderfuntion/datasource/remote/RemoteDataSourceHo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/highorderfuntion/datasource/remote/RemoteDataSourceHo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/highorderfuntion/repository/RepositoryHoImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/highorderfuntion/repository/RepositoryHoImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/rx/datasource/remote/RemoteDataSourceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/rx/datasource/remote/RemoteDataSourceImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/rx/repository/RepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/rx/repository/RepositoryImpl.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -43,38 +42,73 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
-              <folding>
-                <element signature="n#!!block;n#rxjava#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/callback/repository/RepositoryCallbackImpl.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="52" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/highorderfuntion/repository/RepositoryHoImpl.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="424">
+                  <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/kotlin/callback/repository/RepositoryCallbackImpl.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="59">
+                  <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/kotlin/highorderfuntion/repository/RepositoryHoImpl.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="76">
+                  <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/kotlin/callback/datasource/remote/RemoteDataSourceCallbackImpl.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="76">
+                  <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/kotlin/highorderfuntion/repository/RepositoryHoImpl.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="190">
+                  <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/kotlin/rx/repository/RepositoryImpl.kt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="304">
+                  <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+                  <folding>
+                    <element signature="e#23#98#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -102,37 +136,37 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/data/repository/Repository.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/data/datasource/remote/RemoteDataSourceImpl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/data/repository/RepositoryImpl.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/rx/datasource/remote/RemoteDataSourceImpl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/callback/RepositoryCallback.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/callback/RepositoryCallbackImpl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/callback/datasource/RemoteDataSourceCallback.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/rx/Injection.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/callback/repository/Callback.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/callback/datasource/RemoteDataSourceCallbackImpl.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/rx/repository/RepositoryImpl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/util/NaverAccessUtil.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/highorderfuntion/datasource/remote/RemoteDataSourceCallback.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/highorderfuntion/datasource/remote/RemoteDataSourceho.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/highorderfuntion/datasource/remote/RemoteDataSourceCallbackImpl.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/highorderfuntion/datasource/remote/RemoteDataSourceHoImpl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/highorderfuntion/datasource/remote/RemoteDataSourceHo.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/callback/datasource/remote/RemoteDataSourceCallback.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/callback/datasource/remote/RemoteDataSourceCallbackImpl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/callback/repository/RepositoryCallback.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/highorderfuntion/repository/RepositoryCallback.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/callback/repository/RepositoryCallbackImpl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/highorderfuntion/repository/RepositoryHo.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Injection.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Main.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/rx/datasource/remote/RemoteDataSourceImpl.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/highorderfuntion/datasource/remote/RemoteDataSourceHoImpl.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/callback/datasource/remote/RemoteDataSourceCallbackImpl.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/callback/repository/RepositoryCallbackImpl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/highorderfuntion/repository/RepositoryHoImpl.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/rx/repository/RepositoryImpl.kt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2239" />
-    <option name="y" value="124" />
-    <option name="width" value="1512" />
-    <option name="height" value="768" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -170,23 +204,7 @@
               <item name="rx" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="rx_main" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="kotlin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="callback" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="repository" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="rx" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="rx" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="rx_main" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="kotlin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="highorderfuntion" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="rx" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="rx" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="rx_main" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="kotlin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="highorderfuntion" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="repository" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="rx" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -204,7 +222,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567661604335" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567662914649" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -274,10 +292,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16471216" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20738254" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -286,7 +304,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21583514" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.20567375" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -295,7 +313,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.3286119" />
-      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.3275488" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3275488" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -346,13 +364,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/rx/datasource/remote/RemoteDataSourceImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/util/NaverAccessUtil.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -367,13 +378,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="34" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/callback/datasource/remote/RemoteDataSourceCallbackImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="35" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -398,13 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/highorderfuntion/datasource/remote/RemoteDataSourceHoImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Injection.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -415,36 +412,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/rx/repository/RepositoryImpl.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/rx/datasource/remote/RemoteDataSourceImpl.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="37" />
-          <folding>
-            <element signature="e#23#98#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/callback/repository/RepositoryCallbackImpl.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/highorderfuntion/datasource/remote/RemoteDataSourceHoImpl.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="52" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/highorderfuntion/repository/RepositoryHoImpl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+        <state relative-caret-position="247">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+        <state relative-caret-position="424">
+          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/callback/datasource/remote/RemoteDataSourceCallbackImpl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/callback/repository/RepositoryCallbackImpl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/highorderfuntion/repository/RepositoryHoImpl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/rx/repository/RepositoryImpl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
           <folding>
-            <element signature="n#!!block;n#rxjava#0" />
+            <element signature="e#23#98#0" expanded="true" />
           </folding>
         </state>
       </provider>
