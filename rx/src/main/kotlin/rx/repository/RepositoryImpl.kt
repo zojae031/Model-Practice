@@ -10,19 +10,21 @@ import rx.datasource.remote.RemoteDataSource
  */
 class RepositoryImpl private constructor(private val dataSource: RemoteDataSource) :
     Repository {
-    private var index = 0
 
     /**
      * 문제점1 : 학습곡선이 가파르다
      * 결과 -> 비동기처리와 콜백지옥 문제 모두 해결할 수 있다.
      */
-    override fun getList(): Observable<String> = dataSource
-        .getList()
-        .map { it.split(">")[1].split("<")[0] }
-        .map {
-            index++
-            return@map "$index : $it"
-        }
+    override fun getList(): Observable<String> {
+        var index = 0
+        return dataSource
+            .getList()
+            .map { it.split(">")[1].split("<")[0] }
+            .map {
+                index++
+                return@map "$index : $it"
+            }
+    }
 
     companion object {
         private var INSTANCE: RepositoryImpl? = null

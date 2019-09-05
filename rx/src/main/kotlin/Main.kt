@@ -21,7 +21,6 @@ fun main() {
     highOrderFunction()
 }
 
-
 fun callback() {
     RepositoryCbImpl.getInstance(Injection.getDataSourceCallback())
         .getList(object : RepositoryCb.Callback {
