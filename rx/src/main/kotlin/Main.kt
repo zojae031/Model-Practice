@@ -1,6 +1,7 @@
-import data.Injection
-import data.repository.RepositoryImpl
+import callback.repository.RepositoryCallback
+import callback.repository.RepositoryCallbackImpl
 import io.reactivex.disposables.CompositeDisposable
+import rx.repository.RepositoryImpl
 
 /**
  * Main 함수
@@ -10,6 +11,13 @@ import io.reactivex.disposables.CompositeDisposable
  */
 
 fun main() {
+    println("rxjava")
+    Rxjava()
+    println("callback")
+    Callback()
+
+}
+fun Rxjava(){
     val compositeDisposable = CompositeDisposable()
     val repository = RepositoryImpl.getInstance(Injection.getDataSource()) //Repository 생성
 
@@ -21,6 +29,15 @@ fun main() {
     compositeDisposable.clear()
 }
 
+fun Callback(){
+    val repository = RepositoryCallbackImpl.getInstance(Injection.getDataSourceCallback())
+    repository
+        .getList(object : RepositoryCallback.Callback{
+            override fun getList(data: String) {
+                println(data)
+            }
+        })
+}
 
 
 

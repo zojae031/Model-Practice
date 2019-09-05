@@ -1,4 +1,4 @@
-package data.repository
+package rx.repository
 
 import io.reactivex.Observable
 

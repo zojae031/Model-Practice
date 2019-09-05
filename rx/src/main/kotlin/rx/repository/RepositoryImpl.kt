@@ -1,6 +1,6 @@
-package data.repository
+package rx.repository
 
-import data.datasource.remote.RemoteDataSource
+import rx.datasource.remote.RemoteDataSource
 import io.reactivex.Observable
 
 /**
@@ -8,15 +8,16 @@ import io.reactivex.Observable
  * Singleton으로 구성되어있으며 DataSource를 외부에서 주입받아 사용한다.
  * < Local은 존재하지 않는다. >
  */
-class RepositoryImpl private constructor(private val dataSource: RemoteDataSource) : Repository {
+class RepositoryImpl private constructor(private val dataSource: RemoteDataSource) :
+    Repository {
     private var index = 0
 
     override fun getList(): Observable<String> = dataSource
         .getList()
         .map { it.split(">")[1].split("<")[0] }
-        .map { string ->
+        .map {
             index++
-            return@map "$index : $string"
+            return@map "$index : $it"
         }
 
     companion object {

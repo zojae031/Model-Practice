@@ -1,4 +1,4 @@
-package data.datasource.remote
+package rx.datasource.remote
 
 import io.reactivex.Observable
 import java.io.BufferedReader
