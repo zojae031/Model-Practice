@@ -2,10 +2,10 @@
 
 Practice modelling with rxjava
 
-``` 내부에 Callback, 고차함수, Rxjava를 사용한 코드들이 모두 들어있다.```
-[Callback](https://github.com/zojae031/Model-Practice/tree/master/rx/src/main/kotlin/callback)
-[고차함수](https://github.com/zojae031/Model-Practice/tree/master/rx/src/main/kotlin/highorderfuntion)
-[rxjava](https://github.com/zojae031/Model-Practice/tree/master/rx/src/main/kotlin/rx)
+``` 내부에 Callback, 고차함수, Rxjava를 사용한 코드들이 모두 들어있다.```  
+ - [Callback](https://github.com/zojae031/Model-Practice/tree/master/rx/src/main/kotlin/callback)  
+ - [고차함수](https://github.com/zojae031/Model-Practice/tree/master/rx/src/main/kotlin/highorderfuntion)  
+ - [rxjava](https://github.com/zojae031/Model-Practice/tree/master/rx/src/main/kotlin/rx)
 
 ## Main 함수 구성
 
